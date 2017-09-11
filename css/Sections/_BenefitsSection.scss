@@ -1,0 +1,117 @@
+.benefits-section {
+  padding: 40px 0;
+  background-color: $color-section-bg-1;
+}
+
+.benefits-section__container {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: $large-breakpoint) {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+.benefits {
+  @media (min-width: $medium-breakpoint) {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+}
+
+.benefits__item {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+
+  @media (min-width: $medium-breakpoint) {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+
+.benefit-card {
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $large-breakpoint) {
+    max-width: 280px;
+  }
+}
+
+.benefit-card__picture {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+
+  @media (min-width: $large-breakpoint) {
+    margin-bottom: 40px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(100% - 3px);
+    left: calc(50% - 15px);
+    border: 15px solid transparent;
+    border-top: 18px solid $color-corporate;
+
+    //@media (min-width: $medium-breakpoint) {
+    //  left: calc(50% - 15px);
+    //  border-width: 15px;
+    //  border-top-width: 20px;
+    //}
+  }
+}
+
+.benefit-card__image {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid $color-corporate;
+  border-radius: 50%;
+
+  @media (min-width: $medium-breakpoint) {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.benefit-card__description {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+
+  @media (min-width: $medium-breakpoint) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    font-size: 20px;
+  }
+}
+
+
+.benefits-section__c2a {
+  margin-top: 30px;
+  text-align: center;
+}

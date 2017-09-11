@@ -1,0 +1,92 @@
+$color-primary: $color-corporate;
+$color-secondary: #686767;
+
+@import "ButtonMixins";
+
+/* Base */
+.button {
+  cursor: pointer;
+  display: block;
+  min-width: 100px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 25px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 2px;
+  box-shadow: none;
+  transition: .2s all;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover,
+  &:active {
+    outline: none;
+  }
+
+  &[disabled],
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+}
+
+.button__label {
+  display: inline-block;
+}
+
+.button__icon,
+.button__icon-before,
+.button__icon-after {
+  display: inline-block;
+}
+
+.button__icon-before {
+  margin-right: .7em;
+}
+
+.button__icon-after {
+  margin-left: .7em;
+}
+
+/* Style variants */
+.button--primary {
+  @include button-variant(#fff, $color-primary)
+}
+
+.button--secondary {
+  @include button-variant(#fff, $color-secondary)
+}
+
+/* Sizes */
+.button--sm {
+  min-width: 70px;
+  height: 32px;
+  line-height: 32px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px;
+}
+
+.button--lg {
+  min-width: 150px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 18px;
+}
+
+/* Layout */
+.button--fullwidth {
+  display: block;
+  width: 100%;
+}
+
+/* Text transform */
+.button--uppercase {
+  text-transform: uppercase;
+}

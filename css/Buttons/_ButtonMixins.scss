@@ -1,0 +1,88 @@
+@function shade(
+    $color,
+    $percent
+) {
+    @return mix(#000, $color, $percent);
+}
+
+@mixin button-variant($color, $bg-color, $border-color: $bg-color, $hover-color: null, $hover-bg-color: null, $hover-border-color: null) {
+    @if not $hover-color {
+        $hover-color: $color;
+    }
+
+    @if not $hover-bg-color {
+        $hover-bg-color: shade($bg-color, 10%);
+    }
+
+    @if not $hover-border-color {
+        $hover-border-color: $hover-bg-color;
+    }
+
+    $active-bg-color: shade($hover-bg-color, 5%);
+    $active-border-color: shade($hover-border-color, 5%);
+
+    color: $color;
+    background: $bg-color;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $border-color;
+
+    .Button {
+        &__icon,
+        &__icon-before,
+        &__icon-after {
+            color: $bg-color;
+        }
+
+        &__label {
+            color: $color;
+        }
+    }
+
+    &:hover {
+        background: $hover-bg-color;
+        border-color: $hover-border-color;
+
+        .Button {
+            &__icon,
+            &__icon-before,
+            &__icon-after {
+                color: $hover-bg-color;
+            }
+
+            &__label {
+                color: $hover-color;
+            }
+        }
+    }
+
+    &:active {
+        background: $active-bg-color;
+        border-color: $active-border-color;
+
+        .Button {
+            &__icon,
+            &__icon-before,
+            &__icon-after {
+                color: $active-bg-color;
+            }
+        }
+    }
+}
+
+@mixin button-variant-outlined($color, $bg-color, $border-color: $bg-color, $hover-color: null, $hover-bg-color: null, $hover-border-color: null) {
+    @include button-variant($color, $bg-color, $border-color, $hover-color, $hover-bg-color, $hover-border-color);
+
+    &:disabled {
+        opacity: .7;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.01);
+    }
+
+    .Button {
+        &__icon,
+        &__icon-before,
+        &__icon-after {
+            color: $border-color;
+        }
+    }
+}

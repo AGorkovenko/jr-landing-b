@@ -1,0 +1,132 @@
+.numbers-section {
+  padding-top: 50px;
+  padding-bottom: 45px;
+  background-color: $color-section-bg-2;
+}
+
+.numbers-section__container {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media (min-width: $medium-breakpoint) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.counters {
+  @media (min-width: $medium-breakpoint) {
+    display: table;
+    width: 100%;
+  }
+}
+
+.counters__slot {
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $medium-breakpoint) {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.counter {
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.counter__value {
+  margin-top: 0;
+  padding-left: 0;
+  margin-bottom: 15px;
+  list-style: none;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.counter li,
+.counter__digit {
+  display: inline-block;
+  width: 27px;
+  margin: 0;
+  line-height: 1.19;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  background-image: url('../img/CounterDigitBg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-font-smoothing: antialiased;
+
+  @media (min-width: $small-breakpoint) {
+    width: 29px;
+    font-size: 34px;
+  }
+
+  @media (min-width: $medium-breakpoint) {
+  }
+
+  @media (min-width: $large-breakpoint) {
+    width: 31px;
+    font-size: 37px;
+  }
+
+  &:not(:first-child) {
+    margin-left: 4px;
+
+    @media (min-width: $small-breakpoint) {
+      margin-left: 5px;
+    }
+  }
+
+  &:nth-last-child(3n):not(:first-child) {
+    margin-left: 11px;
+
+    @media (min-width: $small-breakpoint) {
+      margin-left: 12px;
+    }
+
+    @media (min-width: $medium-breakpoint) {
+      margin-left: 14px;
+    }
+  }
+
+}
+
+.counter__description {
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 500;
+
+  @media (min-width: $small-breakpoint) {
+    font-size: 18px;
+  }
+}
+
+.counter__line-break {
+  display: inline-block;
+  width: .3em;
+
+  @media (min-width: $medium-breakpoint) {
+    display: block;
+    width: auto;
+  }
+}
+

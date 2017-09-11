@@ -1,0 +1,31 @@
+.site-logo {
+  display: block;
+  font-size: 0;
+}
+
+.site-logo__link {
+
+}
+
+.site-logo__image {
+  height: 18px;
+  width: auto;
+  border: 0;
+
+  @media (min-width: $small-breakpoint) {
+    height: 20px;
+  }
+}
+
+.site-logo--dark {
+  .site-logo__image {
+    height: 32px;
+  }
+}
+
+.site-logo--short {
+  .site-logo__image {
+    width: 40px;
+    height: 40px;
+  }
+}

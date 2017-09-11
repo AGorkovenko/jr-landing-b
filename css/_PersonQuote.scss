@@ -1,0 +1,156 @@
+.person-quote {
+  @media (min-width: $medium-breakpoint) {
+    display: flex;
+  }
+}
+
+.person-quote__avatar {
+  margin-bottom: 30px;
+
+  @media (min-width: $medium-breakpoint) {
+    flex: 0 0 200px;
+    max-width: 200px;
+    margin-bottom: 0;
+    padding-right: 70px;
+  }
+}
+
+.person-quote__image {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid $color-corporate;
+  border-radius: 50%;
+
+  @media (min-width: $medium-breakpoint) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.person-quote__content {
+  position: relative;
+  padding: 25px 30px;
+  background-color: #fff;
+  border-radius: 5px;
+
+  @media (min-width: $medium-breakpoint) {
+    flex: 0 1 calc(100% - 200px);
+    width: calc(100% - 200px);
+    border-top-left-radius: 0;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    padding: 35px 40px;
+  }
+
+  &::before {
+    @media (min-width: $medium-breakpoint) {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -19px; // minus one pixel because of zoom bug
+      display: block;
+      border: 10px solid transparent;
+      border-top-color: #fff;
+      border-right-color: #fff;
+    }
+  }
+}
+
+.person-quote__body {
+  line-height: 1.625;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+
+  @media (min-width: $medium-breakpoint) {
+    font-size: 15px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    font-size: 16px;
+  }
+}
+
+.person-quote__footer {
+  margin-top: 20px;
+
+  @media (min-width: $medium-breakpoint) {
+    display: table;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+.person-quote__more {
+  text-align: center;
+
+  @media (min-width: $medium-breakpoint) {
+    display: table-cell;
+    padding-right: 20px;
+    text-align: left;
+  }
+}
+
+.person-quote__link {
+  white-space: nowrap;
+  padding: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: $color-corporate;
+
+  @media (min-width: $medium-breakpoint) {
+    padding: 0;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    font-size: 14px;
+  }
+}
+
+.person-quote__sign {
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+
+  @media (min-width: $medium-breakpoint) {
+    display: table-cell;
+    margin-top: 0;
+    text-align: right;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    font-size: 14px;
+  }
+}
+
+/* Avatar on the right */
+.person-quote--right {
+  .person-quote__avatar {
+    @media (min-width: $medium-breakpoint) {
+      padding-left: 70px;
+      padding-right: 0;
+      order: 1;
+    }
+  }
+
+  .person-quote__content {
+    @media (min-width: $medium-breakpoint) {
+      order: 0;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 0;
+    }
+
+    &::before {
+      left: auto;
+      right: -19px;
+      border-left-color: #fff;
+      border-right-color: transparent;
+    }
+  }
+}

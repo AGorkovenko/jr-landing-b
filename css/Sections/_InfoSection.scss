@@ -1,0 +1,138 @@
+.info-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: linear-gradient(#1b1b1f, $color-section-bg-1);
+
+  @media (min-width: $medium-breakpoint) {
+    padding-top: 50px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    padding-top: 60px;
+  }
+}
+
+.info-section__container {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media (min-width: $medium-breakpoint) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.info-card {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  @media (min-width: $medium-breakpoint) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+}
+
+.info-card__picture {
+  margin-bottom: 25px;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $medium-breakpoint) {
+    flex: 0 0 43%;
+    max-width: 43%;
+    margin-bottom: 0;
+    margin-right: 40px;
+  }
+}
+
+.info-card__image {
+  display: block;
+  max-height: 220px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $medium-breakpoint) {
+    width: auto;
+    max-width: 90%;
+    max-height: 250px;
+  }
+}
+
+.info-card__content {
+  -webkit-font-smoothing: antialiased;
+
+  @media (min-width: $medium-breakpoint) {
+    flex: 0 1 auto;
+    max-width: 57%;
+    font-size: 22px;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 13px;
+    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+
+    @media (min-width: $medium-breakpoint) {
+      font-size: 22px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    margin-top: 13px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #fff;
+
+    @media (min-width: $medium-breakpoint) {
+      font-size: 15px;
+    }
+
+    @media (min-width: $large-breakpoint) {
+      font-size: 16px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* image on the right */
+.info-card--right {
+  .info-card__picture {
+    @media (min-width: $medium-breakpoint) {
+      order: 1;
+      //margin-left: 40px;
+    }
+  }
+
+  .info-card__content {
+    order: 0;
+  }
+}
+

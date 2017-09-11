@@ -1,0 +1,16 @@
+.c2a-button {
+  text-transform: uppercase;
+}
+
+.c2a-button__secondary {
+  display: none;
+
+  @media (min-width: $medium-breakpoint) {
+    display: inline;
+  }
+}
+
+.c2a-button--large {
+  display: inline-block;
+  letter-spacing: 2px;
+}

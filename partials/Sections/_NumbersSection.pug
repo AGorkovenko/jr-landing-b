@@ -1,0 +1,9 @@
+include ../_Counter
+
+.numbers-section
+  .numbers-section__container
+    .counters(id="counters")
+      .counters__slot
+        +Counter("455654", "зарегистрированных<br>пользователей")(id="counter-users")
+      .counters__slot
+        +Counter("28106572", "решенных<br>задач")(id="counter-tasks")

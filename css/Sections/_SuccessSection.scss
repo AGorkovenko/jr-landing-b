@@ -1,0 +1,22 @@
+.success-section {
+  background-color: $color-section-bg-1;
+}
+
+.success-section__container {
+  padding: 30px 20px 35px;
+
+  @media (min-width: $small-breakpoint) {
+    padding: 30px 30px 35px;
+  }
+
+  @media (min-width: $medium-breakpoint) {
+    padding: 40px 40px 45px;
+  }
+
+  @media (min-width: $large-breakpoint) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px 0 70px;
+  }
+}

@@ -1,0 +1,39 @@
+.glide__track {
+  margin: 0;
+}
+
+.glide__bullets {
+  cursor: default;
+  margin-top: 15px;
+  font-size: 0;
+  text-align: center;
+}
+
+.glide__bullet {
+  cursor: pointer;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 1px 5px;
+  padding: 0;
+  vertical-align: middle;
+  font-size: 0;
+  border: none;
+  background-color: #414347;
+  border-radius: 50%;
+  outline: none;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: lighten(#414347, 10%);
+  }
+}
+
+.glide__bullet.active {
+  width: 15px;
+  height: 15px;
+  margin: 0 3px;
+  background-color: $color-corporate;
+  border: none;
+  box-shadow: none;
+}

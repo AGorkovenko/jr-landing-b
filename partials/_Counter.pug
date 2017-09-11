@@ -1,0 +1,8 @@
+mixin Counter(value, desc)
+  - desc = desc.replace('<br>','<span class="counter__line-break"></span>')
+
+  .counter
+    ul.counter__value(data-value=value)&attributes(attributes)
+      //-each digit in value
+        span.counter__digit #{digit}
+    .counter__description(class="wow fadeInUp" data-wow-offeset="-300") !{desc}

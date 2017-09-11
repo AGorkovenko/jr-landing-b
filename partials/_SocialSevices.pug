@@ -1,0 +1,10 @@
+include _Icon
+
+- var services = ['vk', 'facebook', 'google-plus', 'twitter', 'youtube']
+
+.social-services
+  .social-services__container
+    each service in services
+      .social-services__item
+        a.social-services__link(class="social-services__link--" + service href="#" target="_blank")
+          +Icon('social-' + service)

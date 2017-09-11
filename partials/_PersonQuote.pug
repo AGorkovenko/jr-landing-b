@@ -1,0 +1,13 @@
+mixin PersonQuote(avatarUrl, authorSign, moreText, invertHorizontal)
+  - moreText = moreText || 'Читать дальше'
+
+  .person-quote(class=(invertHorizontal ? 'person-quote--right' : ''))
+    .person-quote__avatar
+      img.person-quote__image(src=avatarUrl)
+    .person-quote__content
+      .person-quote__body
+        block
+      .person-quote__footer
+        .person-quote__more
+          a.person-quote__link(href="#") #{moreText}
+        .person-quote__sign — !{authorSign}

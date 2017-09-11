@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    meta(name="description" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Welcome to JavaRush!
+
+    link(rel="stylesheet" href="css/vendor/glide.core.min.css")
+    link(rel="stylesheet" href="css/vendor/animate.css")
+    //link(rel="stylesheet" href="css/main.prefixed.css")
+    link(rel="stylesheet" href="css/main.css")
+  body
+    include svg-icons.html
+
+    .site-layout
+      .site-layout__glow
+      .site-layout__header
+        include partials/_Header
+      .site-layout__content
+        include partials/Sections/_HeroSection
+        include partials/Sections/_InfoSection
+        include partials/Sections/_NumbersSection
+        include partials/Sections/_SuccessSection
+        include partials/Sections/_ReviewSection
+        include partials/Sections/_BenefitsSection
+      .site-layout__footer
+        include partials/_Footer
+
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script  window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')
+    script(src="js/vendor/typed.min.js")
+    script(src="js/vendor/wow.min.js")
+    script(src="js/vendor/glide.min.js")
+    script(src="js/vendor/countUp.min.js")
+    script(src="js/main.js")
