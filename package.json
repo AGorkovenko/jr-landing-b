@@ -1,15 +1,20 @@
 {
-  "name": "javarush-landing",
+  "name": "gulp.sass",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "doc"
-  },
+  "description": "Gulp, SASS + Slow running tasks",
+  "main": "gulpfile.js",
   "scripts": {
-    "autoprefixer": "postcss --use autoprefixer -c postcss.json -o css/main.prefixed.css css/main.css",
-    "cssnano": "cssnano css/main.prefixed.css css/main.min.css"
+    "start": "gulp"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "pug": "^2.0.0-rc.4",
+    "through2": "^2.0.3"
+  }
 }

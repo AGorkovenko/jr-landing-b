@@ -1,5 +1,6 @@
-mixin PersonQuote(avatarUrl, authorSign, moreText, invertHorizontal)
-  - moreText = moreText || 'Читать дальше'
+mixin PersonQuote(avatarUrl, authorSign, more, invertHorizontal)
+  - moreText = more && more.text ? more.text : 'Читать дальше';
+  - moreLink = more && more.link ? more.link : '#';
 
   .person-quote(class=(invertHorizontal ? 'person-quote--right' : ''))
     .person-quote__avatar
@@ -9,5 +10,5 @@ mixin PersonQuote(avatarUrl, authorSign, moreText, invertHorizontal)
         block
       .person-quote__footer
         .person-quote__more
-          a.person-quote__link(href="#") #{moreText}
+          a.person-quote__link(href=moreLink) #{moreText}
         .person-quote__sign — !{authorSign}
