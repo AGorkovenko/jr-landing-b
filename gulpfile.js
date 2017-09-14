@@ -5,10 +5,13 @@ var pug = require('pug');
 var gulpPug = require('gulp-pug');
 var reload = browserSync.reload;
 var concat = require('gulp-concat');
-// var through = require('through2');
+var plumber = require('gulp-plumber');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 
 gulp.task('pug', function buildHTML() {
   return gulp.src('app/*.pug')
+    .pipe(plumber())
     .pipe(gulpPug({
       pug: pug,
       pretty: true
@@ -20,7 +23,11 @@ gulp.task('pug', function buildHTML() {
 
 gulp.task('sass', function () {
   return gulp.src('app/scss/*.scss')
+    .pipe(plumber())
     .pipe(sass())
+    .pipe(postcss([autoprefixer({
+      browserslist: "IE 10"
+    })]))
     .pipe(gulp.dest('app/css'))
     .pipe(reload({stream: true}));
 });
@@ -61,8 +68,6 @@ gulp.task('default', function () {
   gulp.watch('app/**/*.pug', ['templates-watch']);
   gulp.watch('app/**/*.js', ['scripts-watch']);
 });
-
-// TODO: add PostCSS (autoprefixer etc.)
 
 gulp.task('build', ['templates', 'styles', 'scripts']);
 
