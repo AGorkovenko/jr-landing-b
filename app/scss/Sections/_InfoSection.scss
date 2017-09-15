@@ -30,7 +30,7 @@
   }
 
   @media (min-width: $extra-large-breakpoint) {
-    max-width: 70%;
+    max-width: 73%;
   }
 }
 
@@ -54,8 +54,8 @@
   margin-right: auto;
 
   @media (min-width: $medium-breakpoint) {
-    flex: 0 0 43%;
-    max-width: 43%;
+    flex: 0 0 40%;
+    max-width: 40%;
     margin-bottom: 0;
     margin-right: 40px;
   }
@@ -80,7 +80,7 @@
 
   @media (min-width: $medium-breakpoint) {
     flex: 0 1 auto;
-    max-width: 57%;
+    max-width: 60%;
     font-size: 22px;
   }
 
