@@ -28,14 +28,14 @@
 .site-header__nav {
   display: none;
 
-  @media (min-width: $medium-breakpoint) {
+  @media (min-width: $small-breakpoint) {
     display: table-cell;
     vertical-align: middle;
   }
 }
 
 .site-header__c2a {
-  @media (min-width: $medium-breakpoint) {
+  @media (min-width: $small-breakpoint) {
     margin-left: 50px;
   }
 }

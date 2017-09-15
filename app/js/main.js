@@ -1,9 +1,30 @@
+// Header Nav smooth scroll
+(function () {
+  $('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+
+    var $target = $($(this).attr('href'));
+    var offsetTop = $target.offset().top;
+    var duration = (offsetTop > 1000) ? offsetTop / 2.5 : 500;
+
+    if($target.length) {
+      $('html, body').animate({
+        scrollTop: offsetTop
+      }, duration)
+    }
+  });
+}());
+
 // Glide slider
 (function () {
   $(function () {
     $("#review-slider").glide({
       type: "carousel",
-      animationDuration: 600
+      animationTimingFunc: 'cubic-bezier(0.77, 0, 0.175, 1)',
+      animationDuration: 650,
+      dragDistance: 180,
+      touchDistance: 150,
+      autoplay: 5000
     });
   });
 }());
