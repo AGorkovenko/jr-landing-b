@@ -8,6 +8,7 @@ var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var cssnano = require('gulp-cssnano');
 
 gulp.task('pug', function buildHTML() {
   return gulp.src('app/*.pug')
@@ -28,12 +29,6 @@ gulp.task('sass', function () {
     .pipe(postcss([autoprefixer({
       browserslist: "IE 10"
     })]))
-    .pipe(gulp.dest('app/css'))
-    .pipe(reload({stream: true}));
-});
-
-gulp.task('minifyCss', function () {
-  return gulp.src('app/css/*.css')
     .pipe(cssnano({
       safe: true,
       autoprefixer: false,
@@ -42,7 +37,8 @@ gulp.task('minifyCss', function () {
       discardUnused: false,
       zindex: false
     }))
-    .pipe(gulp.dest('app/css/'));
+    .pipe(gulp.dest('app/css'))
+    .pipe(reload({stream: true}));
 });
 
 gulp.task('jsConcat', function() {
