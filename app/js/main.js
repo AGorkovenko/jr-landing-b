@@ -7,7 +7,7 @@
     var offsetTop = $target.offset().top;
     var duration = (offsetTop > 1000) ? offsetTop / 2.5 : 500;
 
-    if($target.length) {
+    if ($target.length) {
       $('html, body').animate({
         scrollTop: offsetTop
       }, duration)
@@ -18,14 +18,20 @@
 // Glide slider
 (function () {
   $(function () {
-    $("#review-slider").glide({
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    var timingFunction = !isMobile ? 'cubic-bezier(0.77, 0, 0.175, 1)' : null;
+
+    var reviewSlider = $("#review-slider").glide({
       type: "carousel",
-      animationTimingFunc: 'cubic-bezier(0.77, 0, 0.175, 1)',
       animationDuration: 650,
       dragDistance: 180,
-      touchDistance: 150,
+      touchDistance: 50,
       autoplay: 5000
     });
+
+    if(!isMobile) {
+      reviewSlider.animationTimingFunc = timingFunction;
+    }
   });
 }());
 
@@ -48,7 +54,7 @@
 }());
 
 // WoW animation
-(function() {
+(function () {
   var wow = new WOW({
       boxClass: 'wow',
       animateClass: 'animated',
@@ -61,7 +67,7 @@
 }());
 
 // Counters animation
-(function() {
+(function () {
   function fillCounter(value, elem) {
     elem.innerHTML = "";
 
@@ -76,32 +82,32 @@
     });
   }
 
-    var numbers = document.querySelector("#counters");
+  var numbers = document.querySelector("#counters");
 
-    function scroll() {
-      if (numbers.getBoundingClientRect().top - window.innerHeight <= 0) {
-        usersCounter.start();
-        tasksCounter.start();
-        window.removeEventListener('scroll', scroll);
-      }
+  function scroll() {
+    if (numbers.getBoundingClientRect().top - window.innerHeight <= 0) {
+      usersCounter.start();
+      tasksCounter.start();
+      window.removeEventListener('scroll', scroll);
     }
+  }
 
-    var usersEl = document.getElementById('counter-users');
-    var tasksEl = document.getElementById('counter-tasks');
+  var usersEl = document.getElementById('counter-users');
+  var tasksEl = document.getElementById('counter-tasks');
 
-    var usersCounter = new CountUp(usersEl, 0, usersEl.getAttribute('data-value'), 0, 3);
-    var tasksCounter = new CountUp(tasksEl, 0, tasksEl.getAttribute('data-value'), 0, 3);
+  var usersCounter = new CountUp(usersEl, 0, usersEl.getAttribute('data-value'), 0, 3);
+  var tasksCounter = new CountUp(tasksEl, 0, tasksEl.getAttribute('data-value'), 0, 3);
 
-    usersCounter.printValue = function (value) {
-      fillCounter(value, usersEl);
-    };
+  usersCounter.printValue = function (value) {
+    fillCounter(value, usersEl);
+  };
 
-    tasksCounter.printValue = function (value) {
-      fillCounter(value, tasksEl);
-    };
+  tasksCounter.printValue = function (value) {
+    fillCounter(value, tasksEl);
+  };
 
-    usersCounter.reset();
-    tasksCounter.reset();
+  usersCounter.reset();
+  tasksCounter.reset();
 
-    window.addEventListener('scroll', scroll);
+  window.addEventListener('scroll', scroll);
 }());
