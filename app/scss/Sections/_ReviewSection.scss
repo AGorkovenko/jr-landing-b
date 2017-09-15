@@ -19,6 +19,10 @@
     margin-right: auto;
     padding: 50px 0 60px;
   }
+
+  @media (min-width: $extra-large-breakpoint) {
+    max-width: 70%;
+  }
 }
 
 // TODO: solve hack

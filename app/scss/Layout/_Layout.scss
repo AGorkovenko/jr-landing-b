@@ -2,8 +2,8 @@
   overflow: hidden; // required for inner blocks animation
   position: relative;
   width: 100%;
-  min-width: 320px;
-  max-width: 1240px;
+  min-width: $site-layout-min-width;
+  max-width: $site-layout-max-width;
   margin-left: auto;
   margin-right: auto;
   background-color: $color-site-bg;

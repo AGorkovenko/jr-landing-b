@@ -28,6 +28,10 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  @media (min-width: $extra-large-breakpoint) {
+    max-width: 70%;
+  }
 }
 
 .info-card {
@@ -66,7 +70,7 @@
 
   @media (min-width: $medium-breakpoint) {
     width: auto;
-    max-width: 90%;
+    max-width: 85%;
     max-height: 250px;
   }
 }
@@ -127,7 +131,8 @@
   .info-card__picture {
     @media (min-width: $medium-breakpoint) {
       order: 1;
-      //margin-left: 40px;
+      margin-left: 40px;
+      margin-right: 0;
     }
   }
 

@@ -19,4 +19,8 @@
     margin-right: auto;
     padding: 60px 0 70px;
   }
+
+  @media (min-width: $extra-large-breakpoint) {
+    max-width: 70%;
+  }
 }

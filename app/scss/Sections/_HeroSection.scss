@@ -22,11 +22,12 @@
 .hero-title {
   margin-top: 0;
   margin-bottom: 20px;
-  line-height: 1.2;
+  line-height: 1.3;
   text-align: center;
   color: #ddd;
   font-size: 18px;
   font-weight: 400;
+  letter-spacing: 1px;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 
@@ -37,6 +38,7 @@
 
   @media (min-width: $medium-breakpoint) {
     margin-bottom: 35px;
+    line-height: 1.2;
   }
 
   @media (min-width: $large-breakpoint) {
@@ -97,9 +99,13 @@
   position: relative;
   z-index: 1;
   width: 760px;
-  max-width: 95%;
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: $small-breakpoint) {
+    max-width: 80%;
+  }
 
   @media (min-width: $medium-breakpoint) {
     max-width: 75%;

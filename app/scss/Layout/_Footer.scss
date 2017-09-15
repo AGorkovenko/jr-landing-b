@@ -1,11 +1,11 @@
 .site-footer {
   position: relative;
   display: block;
-  padding: 20px 30px;
   background-color: $color-section-bg-2;
 }
 
 .site-footer__container {
+  padding: 20px 30px;
 
   @media (min-width: $medium-breakpoint) {
     display: flex;
@@ -14,7 +14,7 @@
   }
 
   @media (min-width: $large-breakpoint) {
-    width: 85%;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
