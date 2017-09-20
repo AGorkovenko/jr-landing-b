@@ -84,30 +84,43 @@
 
   var numbers = document.querySelector("#counters");
 
-  function scroll() {
-    if (numbers.getBoundingClientRect().top - window.innerHeight <= 0) {
-      usersCounter.start();
-      tasksCounter.start();
-      window.removeEventListener('scroll', scroll);
-    }
-  }
-
   var usersEl = document.getElementById('counter-users');
   var tasksEl = document.getElementById('counter-tasks');
+  var usersAmount = usersEl.getAttribute('data-value');
+  var tasksAmount = tasksEl.getAttribute('data-value');
 
-  var usersCounter = new CountUp(usersEl, 0, usersEl.getAttribute('data-value'), 0, 3);
-  var tasksCounter = new CountUp(tasksEl, 0, tasksEl.getAttribute('data-value'), 0, 3);
+  $.ajax({
+    type   : "GET",
+    url    : "/api/rest/user/server/statistics.json?v=2" + new Date().getTime(),
+    data   : "",
+    success: function (info) {
+      usersAmount = info.usersCount;
+      tasksAmount = info.taskSolvedCount;
+    },
+    complete: function () {
+      function scroll() {
+        if (numbers.getBoundingClientRect().top - window.innerHeight <= 0) {
+          usersCounter.start();
+          tasksCounter.start();
+          window.removeEventListener('scroll', scroll);
+        }
+      }
 
-  usersCounter.printValue = function (value) {
-    fillCounter(value, usersEl);
-  };
+      var usersCounter = new CountUp(usersEl, 0, usersAmount, 0, 3);
+      var tasksCounter = new CountUp(tasksEl, 0, tasksAmount, 0, 3);
 
-  tasksCounter.printValue = function (value) {
-    fillCounter(value, tasksEl);
-  };
+      usersCounter.printValue = function (value) {
+        fillCounter(value, usersEl);
+      };
 
-  usersCounter.reset();
-  tasksCounter.reset();
+      tasksCounter.printValue = function (value) {
+        fillCounter(value, tasksEl);
+      };
 
-  window.addEventListener('scroll', scroll);
+      usersCounter.reset();
+      tasksCounter.reset();
+
+      window.addEventListener('scroll', scroll);
+    }
+  });
 }());
